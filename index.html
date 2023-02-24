@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speck academy project</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <form>
+        <h1>My technologies</h1>
+        <input type="text" name="text" id="txt" placeholder="Enter your technology...">
+        <button id="submitButton" type="submit" class="btn-list">Add</button>
+        <button id = "removeButton" class="btn-remove">Remove All</button>
+    </form>
+
+    <div class="container">
+        <ul>
+        </ul>
+    </div>
+
+    <script>
+        const inputText = document.querySelector('#txt');
+        const addButton = document.querySelector('.btn-list');
+        const removeButton = document.querySelector('.btn-remove');
+        const list = document.querySelector('.container ul')
+
+        addButton.addEventListener('click', (e)=>{
+            if(inputText.value != ""){
+                e.preventDefault();
+
+                //create li
+                const listItem = document.createElement('li');
+                listItem.innerHTML = inputText.value;
+                list.appendChild(listItem);
+
+                //create span
+                const mySpan = document.createElement('span');
+                mySpan.innerHTML = 'X';
+                listItem.appendChild(mySpan);
+            }
+
+            inputText.value = '';
+
+            //closing single item
+            const close = document.querySelectorAll('span');
+            for(let i = 0; i < close.length; i++){
+                close[i].addEventListener('click', () => {
+                    close[i].parentElement.style.opacity = 0;
+                    setTimeout(() => {
+                        close[i].parentElement.style.display = "none";
+                        close[i].parentElement.remove();
+                    }, 500)  
+                })
+            }
+        })
+
+        removeButton.addEventListener('click', (e)=>{
+            e.preventDefault();
+
+            const closeList = document.querySelectorAll('li');
+            closeList.forEach(element => {
+                element.parentElement.style.opacity = 0;
+            });
+        })
+    </script>
+</body>
+</html>

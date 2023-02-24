@@ -1,0 +1,94 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    margin-bottom: 50px;
+}
+
+form{
+    margin-top: 50px;
+    background: #fff;
+    width: 800px;
+}
+
+form input{
+    left: 0;
+    width: 200px;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding: 5px 5px;
+    border-radius: 15px;
+    border: 2px solid #A0A0A0;
+}
+
+form button{
+    width: 75px;
+    height: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+#submitButton{
+    background: teal;
+    color: #fff;
+}
+
+#removeButton{
+    background: #fff;
+    color: red;
+    font-weight: bold;
+    float: right;
+}
+
+.container{
+    margin-top: 50px;
+}
+
+ul{
+    list-style: none;
+    width: 800px;
+    -webkit-column-count: 2;  
+        -moz-column-count: 2; 
+            column-count: 2;
+}
+
+ul li{
+    width: 100%;
+    flex-direction: column;
+    background: #fff;
+    height: 50px;
+    line-height: 40px;
+    padding: 5px 25px;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    margin: 5px 0;
+    border-radius: 15px;
+    border: 2px solid #A0A0A0;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.5s linear;
+}
+
+ul li span{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    padding: 3px 20px;
+    color: red;
+}
